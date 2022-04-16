@@ -1,0 +1,82 @@
+int loop=0, choice=0, option=0, sex;
+string? name, gender, DOB, ID;
+while(loop != 1 || choice == 1)
+{
+	Console.Write("\nName: ");         
+	name = Console.ReadLine();
+
+	Console.Write("Gender(1=Male, 2=Female): ");
+	sex = Convert.ToInt32(Console.ReadLine());
+	if (sex == 1)
+	{
+		gender = "Male";
+	}
+	else
+	{
+		gender = "Female";
+	}
+
+	Console.Write("Date of Birth: ");
+	DOB = Console.ReadLine();
+
+	Console.Write("Student ID: ");
+	ID = Console.ReadLine();
+	loop = 0;
+			
+	while (loop == 0)
+	{
+		Console.WriteLine("\nYour Name is " + name);
+		Console.WriteLine("Your Gender is " + gender);
+		Console.WriteLine("Your Date of Birth is " + DOB);
+		Console.WriteLine("Your Student ID is " + ID + "\n");
+
+		Console.Write("Press 1 to confirm your information, Press 2 to fill in again: ");
+		loop = Convert.ToInt32(Console.ReadLine());
+		if (loop == 2)
+		{
+			Console.Write("\nPress 1 to fill in all information again, Press 2 to edit information: ");
+			choice = Convert.ToInt32(Console.ReadLine());
+			if (choice == 2)
+			{
+				Console.Write("\nWhat information do you want to edit?(1=Name, 2=Gender, 3=Date of Birth, 4=Student ID): ");     
+				option = Convert.ToInt32(Console.ReadLine());
+				if (option == 1)
+				{
+					Console.Write("\nName: ");         
+					name = Console.ReadLine();
+					loop = 0; 
+				}
+				else if (option == 2)
+				{
+					Console.Write("\nGender(1=Male, 2=Female): ");
+					sex = Convert.ToInt32(Console.ReadLine());
+					if (sex == 1)
+					{
+						gender = "Male";
+					}
+					else
+					{
+						gender = "Female";
+					}
+					loop = 0;
+				}
+				else if (option == 3)
+				{
+					Console.Write("\nDate of Birth: ");         
+					DOB = Console.ReadLine();
+					loop = 0;
+				}
+				else if (option == 4)
+				{
+					Console.Write("\nStudent ID: ");         
+					ID = Console.ReadLine();
+					loop = 0;
+				}
+			}
+		}
+		else
+		{
+			Console.WriteLine("\nYou have finish filling in your personal information!\n");
+		}
+	}
+}
